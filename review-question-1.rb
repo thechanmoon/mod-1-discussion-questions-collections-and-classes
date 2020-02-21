@@ -60,6 +60,86 @@ pokemon = [
 }
 ]
 
+def getBulbasaurAbilityUrl(pokemon)
+    # pokemon[0][:abilities][0][:ability][:url]
+    pokemon[0][:abilities][0][:ability][:url]
+end
+
+def getFirstPokemon(pokemons)
+    # pokemons.find { | pokemon | pokemon[:base_experience] > 40 }
+
+    pokemons.find do | pokemon |
+        pokemon[:base_experience] > 40   
+    end  
+    
+    # pokemons.find do | pokemon |
+
+    #     if pokemon[:base_experience] > 40 &&  pokemon[:base_experience]
+        
+    #     end
+    # end
+end
+
+def getAllPokemon(pokemons)
+    # pokemons.find { | pokemon | pokemon[:base_experience] > 40 }
+
+    # pokemons.find do | pokemon |
+    #     pokemon[:base_experience] > 40   
+    # end  
+    
+    retPokemon = []
+    pokemons.each do | pokemon |
+
+        if pokemon[:base_experience] > 40
+            retPokemon << pokemon
+        end
+    end
+    retPokemon
+end
+
+def getAllPokemonNames(pokemons)
+    # pokemons.find { | pokemon | pokemon[:base_experience] > 40 }
+
+    # pokemons.find do | pokemon |
+    #     pokemon[:base_experience] > 40   
+    # end  
+    
+    retPokemon = []
+    pokemons.each do | pokemon |
+
+        # if pokemon[:base_experience] > 40
+            retPokemon << pokemon[:name]
+        # end
+    end
+    retPokemon
+end
+
+# pokemon = [
+#   {
+#     "id": 1,
+#     "name": "bulbasaur",
+#     "base_experience": 64,
+#     "height": 7,
+#     "is_default": true,
+#     "order": 1,
+#     "weight": 69,
+#     "abilities": [
+#         {
+#             "is_hidden": true,
+#             "slot": 3,
+#             "ability": {
+#                 "name": "chlorophyll",
+#                 "url": "http://pokeapi.co/api/v2/ability/34/"
+#             }
+#         }
+#     ]
+# },
+
+
+# puts getBulbasaurAbilityUrl(pokemon)
+# puts getFirstPokemon(pokemon)
+# puts getAllPokemon(pokemon)
+puts getAllPokemonNames(pokemon)
 
 # How would you get the url for Bulbasaur's ability?
 # How would you return the first pokemon with base experience over 40?
