@@ -114,6 +114,20 @@ def getAllPokemonNames(pokemons)
     retPokemon
 end
 
+
+def getPokemonOerWeight(pokemons)
+    
+    retVal = false
+    pokemons.each do | pokemon |
+
+        if pokemon[:weight] > 60
+            retVal = true
+            break
+        end
+    end
+    retVal
+end
+
 # pokemon = [
 #   {
 #     "id": 1,
@@ -139,7 +153,8 @@ end
 # puts getBulbasaurAbilityUrl(pokemon)
 # puts getFirstPokemon(pokemon)
 # puts getAllPokemon(pokemon)
-puts getAllPokemonNames(pokemon)
+# puts getAllPokemonNames(pokemon)
+puts getPokemonOerWeight(pokemon) 
 
 # How would you get the url for Bulbasaur's ability?
 # How would you return the first pokemon with base experience over 40?
